@@ -1,12 +1,17 @@
-source :rubygems
-        gem 'bson_ext'
-        gem "jquery-rails", "~>0.2"
-        gem 'rails'
-        gem 'mongoid', :git => 'https://github.com/mongoid/mongoid.git'
-        gem 'carrierwave', :git => "git://github.com/jnicklas/carrierwave.git"
-        gem 'mini_magick', :git => 'git://github.com/probablycorey/mini_magick.git'
-        
+source 'http://rubygems.org'
 
+gem 'rails', '3.0.7'
+gem 'jquery-rails', '>= 0.2.6'
+
+gem 'bson_ext'
+gem 'mongoid'
+gem 'carrierwave'
+gem 'mini_magick'
+
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+# gem 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'

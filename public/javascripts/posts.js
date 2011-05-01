@@ -1,4 +1,4 @@
-var posts = function () 
+var posts = (function()
 {
   return {
     nextPost : function (className)
@@ -28,4 +28,4 @@ var posts = function ()
         .delay(800)
     }
   }
-}();
+})();
