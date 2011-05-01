@@ -5,6 +5,13 @@ body {
 .content {
   @include container();
 }
+
+.row {
+  @include columns(4);
+  @include alpha();
+  @include omega();
+}
+
 .post {
   @include columns(1);
   margin-bottom:20px;

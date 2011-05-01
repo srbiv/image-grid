@@ -23,10 +23,17 @@ $(document).ready(function() {
     }
   });
 
-  $(window).scroll(function() {
+  var allowedScrollFrequency = 800;
+  var detectRow = function() {
     if  ($(window).scrollTop() == $(document).height() - $(window).height()) {
       posts.getRow($('#posts'));
     }
+  }
+
+  var debouncedDetectRow = _(detectRow).debounce(allowedScrollFrequency);
+
+  $(window).scroll(function() {
+    detectRow();
   });
 
 });
