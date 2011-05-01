@@ -1,0 +1,32 @@
+source :rubygems
+        gem 'bson_ext'
+        gem "jquery-rails", "~>0.2"
+        gem 'rails'
+        gem 'mongoid', :git => 'https://github.com/mongoid/mongoid.git'
+        gem 'carrierwave', :git => "git://github.com/jnicklas/carrierwave.git"
+        gem 'mini_magick', :git => 'git://github.com/probablycorey/mini_magick.git'
+        
+
+
+# Use unicorn as the web server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
+# gem 'ruby-debug'
+# gem 'ruby-debug19', :require => 'ruby-debug'
+
+# Bundle the extra gems:
+# gem 'bj'
+# gem 'nokogiri'
+# gem 'sqlite3-ruby', :require => 'sqlite3'
+# gem 'aws-s3', :require => 'aws/s3'
+
+# Bundle gems for the local environment. Make sure to
+# put test-only gems in this group so their generators
+# and rake tasks are available in development mode:
+# group :development, :test do
+#   gem 'webrat'
+# end

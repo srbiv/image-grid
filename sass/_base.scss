@@ -1,0 +1,12 @@
+// Imports -------------------------------------------------------------------
+@import "susy";
+@import "compass/layout/sticky-footer";
+
+// Grid ----------------------------------------------------------------------
+
+$total-cols             : 4;
+$col-width              : 252px;
+$gutter-width           : 20px;
+$side-gutter-width      : $gutter-width;
+
+$show-grid-backgrounds  : true;
