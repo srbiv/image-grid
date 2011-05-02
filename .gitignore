@@ -4,3 +4,4 @@ log/*.log
 tmp/
 tmtags
 .sass-cache
+public/uploads

@@ -1,24 +1,16 @@
 <div id="posts">
-  <%# Rows %>
-  <% 5.times do %>
+  <%# nastiness find_in_batches and in_groups_of aren't working %>
+  <% ([@posts.count/4, 1].max).times do |page| %>
     <div class="row">
-      <%# Elements per Row %>
-      <% 4.times do %>
-        <div class="post <%= cycle('alpha', nil, nil, 'omega') %>">
-          <img src="/images/img-placeholder-<%= rand 5 %>.jpg">
-          <div class="info">
-            <h2>Awesome Bikes</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </div>
-      <% end %>
+      <%# Renders the _post.html.erb partial for each of the next 4 posts %>
+      <%= render @posts.skip(page).limit(4) %>
     </div>
   <% end %>
 </div>
 
 <div id="footer">
   <ul>
-    <li class="title">Collection : </li>
+    <li class="title">Photos (<%= @posts.count %>):</li>
     <li><%= link_to 'New Post', new_post_path %></li>
     <li><a id='animate' href="#">Animate</a></li>
   </ul>

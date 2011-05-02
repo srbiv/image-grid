@@ -1,13 +1,20 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
+
+# Javascript Flavor
 gem 'jquery-rails', '>= 0.2.6'
 
+# ODM
+gem 'mongoid'
+gem 'bson_ext'
+
+# Compass
 gem 'rb-fsevent'
 gem 'compass'
 gem 'compass-susy-plugin'
-gem 'bson_ext'
-gem 'mongoid'
+
+# File Uploader/Processor
 gem 'carrierwave'
 gem 'mini_magick'
 
