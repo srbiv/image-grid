@@ -1,9 +1,8 @@
 <div id="posts">
-  <%# nastiness find_in_batches and in_groups_of aren't working %>
-  <% ([@posts.count/4, 1].max).times do |page| %>
+  <% @posts.in_groups_of(4).each do |row_of_posts| %>
     <div class="row">
       <%# Renders the _post.html.erb partial for each of the next 4 posts %>
-      <%= render @posts.skip(page).limit(4) %>
+      <%= render row_of_posts %>
     </div>
   <% end %>
 </div>
