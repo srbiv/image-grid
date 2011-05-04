@@ -17,7 +17,7 @@ class Post
   ###################
   ### Validations ###
   ###################
-  validates_presence_of :image, :title
+  validates_presence_of :title
 
   ##############
   ### Scopes ###

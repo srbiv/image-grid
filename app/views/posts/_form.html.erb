@@ -1,9 +1,10 @@
 <%= simple_form_for @post, :html => { :multipart => true } do |f| %>
-  <%= f.input :image %>
   <%= f.input :title %>
+  <%= f.input :image %>
   <%= f.input :description %>
 
   <div class="actions">
     <%= f.button :submit %>
+    <%= link_to 'Cancel', posts_path %>
   </div>
 <% end %>

@@ -7,6 +7,4 @@
 
 .container {
   @include container;
-  @include susy-grid-background;
-  background-color:black;
 }

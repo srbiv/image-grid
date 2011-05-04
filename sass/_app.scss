@@ -1,18 +1,39 @@
 body {
-  background-color:black;
+  background-color:white;
   min-width:1200px;
+}
+form {
+  @include container();
+  @include blueprint-form(); 
+  @include blueprint-inline-form();
+  
+  label {
+    @include inline-block();
+    width:6em;
+  }
+  .actions{
+    @include columns(2);
+    @include pad(1);
+  }
+  .error{
+    display:block;
+  }
 }
 .content {
   @include container();
 }
 
 .row {
-  @include columns(4);
+  @include container();
+}
+.alpha {
   @include alpha();
+}
+.omega {
   @include omega();
 }
 
-.post {
+#posts .post {
   @include columns(1);
   margin-bottom:20px;
   border:1px solid white;
@@ -20,10 +41,19 @@ body {
   width:250px;
   position:relative;
   
+  .info {
+    display:none;
+  }
+  
+  .edit {
+    position:absolute;
+    top:0;
+    left:0;
+  }
+  
   &:hover {
     cursor:pointer;
     border-color:#333;
-    
     .info {
       @include opacity(.9);
       color:#ccc;
@@ -33,6 +63,7 @@ body {
       bottom:0;
       left:0;
       background-color:black;
+      display:block;
       
       h2 {
         font-size:18px;
@@ -48,14 +79,10 @@ body {
   }
 
 }
-.alpha {
-  @include alpha();
-}
-.omega {
-  @include omega();
-}
+
 
 #footer {
+  @include full;
   @include opacity(.9);
   @include border-radius(5px);
   border:1px solid;
