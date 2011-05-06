@@ -1,9 +1,7 @@
 <div id="posts">
   <% @posts.each do |post| %>
-    <div class="row">
-      <%# Renders the _post.html.erb partial for each post %>
-      <%= render post %>
-    </div>
+    <%# Renders the _post.html.erb partial for each post %>
+    <%= render post %>
   <% end %>
 </div>
 

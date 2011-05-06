@@ -1,6 +1,5 @@
 body {
   background-color:white;
-  min-width:1200px;
 }
 form {
   @include container();
@@ -20,82 +19,73 @@ form {
   }
 }
 .content {
-  @include container();
+  @include container;
 }
 
-.row {
-  @include container();
-}
-.alpha {
-  @include alpha();
-}
-.omega {
-  @include omega();
-}
-
-#posts .post {
-  @include columns(1);
-  margin-bottom:20px;
-  border:1px solid white;
-  height:250px;
-  width:250px;
-  position:relative;
+#posts{
+  @include full;
+  .post {
+    @include inline-block;
+    margin-bottom:20px;
+    border:1px solid white;
+    height:250px;
+    width:250px;
+    position:relative;
   
-  .info {
-    display:none;
-  }
-  
-  .edit {
-    position:absolute;
-    top:0;
-    left:0;
-  }
-  
-  &:hover {
-    cursor:pointer;
-    border-color:#333;
     .info {
-      @include opacity(.9);
-      color:#ccc;
+      display:none;
+    }
+  
+    .edit {
       position:absolute;
-      height:85px;
-      width:250px;
-      bottom:0;
+      top:0;
       left:0;
-      background-color:black;
-      display:block;
+    }
+  
+    &:hover {
+      cursor:pointer;
+      border-color:#333;
+      .info {
+        @include opacity(.9);
+        color:#ccc;
+        position:absolute;
+        height:85px;
+        width:250px;
+        bottom:0;
+        left:0;
+        background-color:black;
+        display:block;
       
-      h2 {
-        font-size:18px;
-        margin:12px 24px 6px 12px;
+        h2 {
+          font-size:18px;
+          margin:12px 24px 6px 12px;
 
-      }
+        }
 
-      p{
-        font-size:12px;
-        margin:6px 12px 0 12px;
+        p{
+          font-size:12px;
+          margin:6px 12px 0 12px;
+        }
       }
     }
+
   }
-
 }
-
 
 #footer {
   @include full;
-  @include opacity(.9);
+  @include opacity(.7);
   @include border-radius(5px);
   border:1px solid;
   border-color:#BBBBBB #AAAAAA #888888;
   height: 54px;
-  left: 40px;
-  min-width: 490px;
   padding-left: 24px;
   position: fixed;
-  right: 40px;
+  width:1016px;
   bottom: 20px;
   z-index: 100;
   background-color:#ccc;
+  margin:0 auto;
   
   ul {
     @include horizontal-list();
