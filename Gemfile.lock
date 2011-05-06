@@ -96,7 +96,6 @@ GEM
 PLATFORMS
   ruby
 
-
 DEPENDENCIES
   bson_ext
   carrierwave
