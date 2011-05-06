@@ -3,8 +3,19 @@
 <head>
   <title>ImageGrid</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'underscore', :defaults, 'posts' %>
+  <%= javascript_include_tag 'underscore', 'handlebars', :defaults, 'posts' %>
   <%= csrf_meta_tag %>
+
+  <script id="post-template" type="text/x-handlebars-template">
+    <div class="post {{ className }}">
+      <div class="edit"><a>edit link</a></div>
+      <img src="{{ url }}">
+      <div class="info">
+        <h2>{{ title }}</h2>
+        <p>{{ description }}</p>
+      </div>
+    </div>
+  </script>
 </head>
 <body id='scroller'>
   <div class='content'>
