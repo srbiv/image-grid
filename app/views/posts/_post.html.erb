@@ -1,4 +1,4 @@
-<div class="post <%= cycle('alpha', nil, nil, 'omega') %>">
+<div class="post">
   <div class="edit"><%= link_to 'Edit', edit_post_path(post) %></div>
   <img src="<%= post.image.url(:main) %>">
   <div class="info">

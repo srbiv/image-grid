@@ -1,8 +1,8 @@
 <div id="posts">
-  <% @posts.in_groups_of(4).each do |row_of_posts| %>
+  <% @posts.each do |post| %>
     <div class="row">
-      <%# Renders the _post.html.erb partial for each of the next 4 posts %>
-      <%= render row_of_posts %>
+      <%# Renders the _post.html.erb partial for each post %>
+      <%= render post %>
     </div>
   <% end %>
 </div>
