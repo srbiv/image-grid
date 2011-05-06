@@ -1,5 +1,11 @@
 var posts = (function()
 {
+  var postTemplate;
+  $(function() {
+    var source   = $("#post-template").html();
+    postTemplate = Handlebars.compile(source);
+  });
+
   return {
     newRowElement : function() {
       return $('<div class="row"></div>');
@@ -7,13 +13,12 @@ var posts = (function()
 
     nextPost : function (className)
     {
-      return  '<div class="post '+className+'">'+
-              '<img src="/images/img-placeholder-'+Math.round(Math.random()*4)+'.jpg">'+
-              '<div class="info">'+
-              '<h2>Awesome Bikes</h2>'+
-              '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'+
-              '</div>'+
-              '</div>';
+      return postTemplate(
+        { className:   className
+        , url:         "/images/img-placeholder-"+Math.round(Math.random()*4)+".jpg"
+        , title:       "Awesome Bikes"
+        , description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+        });
     },
     
     getRow : function (addToElement)
