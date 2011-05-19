@@ -3,7 +3,7 @@
 <head>
   <title>ImageGrid</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'underscore', 'handlebars', :defaults, 'posts' %>
+  <%= javascript_include_tag 'underscore', 'handlebars', :defaults, 'transform', 'posts' %>
   <%= csrf_meta_tag %>
 
   <script id="post-template" type="text/x-handlebars-template">
@@ -17,8 +17,8 @@
     </div>
   </script>
 </head>
-<body id='scroller'>
-  <div class='content'>
+<body>
+  <div id='content'>
     <%= yield :layout %>
   </div>
 </body>

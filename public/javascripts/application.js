@@ -1,17 +1,16 @@
 $(document).ready(function() {
   var animating         = false
-    , toggleElement     = $('#animate')
-    , containerToScroll = $('#scroller')
-    , scrollTop         = 100
-    , scrollAmount      = 200
+    , toggleElement     = $('#footer')
+    , containerToScroll = $('#posts')
+    , scrollTop         = 0
+    , scrollAmount      = 100
     , scrollTime        = 1000
     , interval          = null;
 
   var nudgeScroll = function() {
     scrollTop = scrollTop + scrollAmount;
-
-    containerToScroll.animate({ scrollTop: scrollTop  }, scrollTime, 'linear');
-  };
+    containerToScroll.animate({ translate : ['0px', '-' + scrollTop + 'px'] }, scrollTime, 'linear');
+  }
 
   toggleElement.click(function() {
     animating = !animating;
@@ -19,9 +18,10 @@ $(document).ready(function() {
     if(animating) {
       interval = setInterval(nudgeScroll, scrollTime);
     } else {
+      containerToScroll.animate({ translate : ['0px', '0px'] }, scrollTime, 'linear');
       clearInterval(interval);
     }
-  });
+  })
 
   var allowedScrollFrequency = 800;
   var detectRow = function() {
@@ -32,9 +32,9 @@ $(document).ready(function() {
 
   var debouncedDetectRow = _(detectRow).debounce(allowedScrollFrequency);
 
-  $(window).scroll(function() {
-    detectRow();
-  });
-
+  $('.edit').click(function () {
+    return posts.edit($(this));
+  })
+  
 });
 

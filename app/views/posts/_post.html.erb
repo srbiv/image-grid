@@ -1,8 +1,24 @@
 <div class="post <%= cycle 'alpha', nil, nil, 'omega' %>">
+  <% if admin_signed_in? -%>
   <div class="edit"><%= link_to 'Edit', edit_post_path(post) %></div>
+  <% end %>
   <img src="<%= post.image.url(:main) %>">
   <div class="info">
     <h2><%= post.title %></h2>
     <p><%= post.description %></p>
   </div>
+  <script class="edit_form" type="text/x-handlebars-template">
+      <%= simple_form_for post, :html => { :multipart => true } do |f| %>
+        <h2>Editing <%= post.title %></h2>
+        <%= f.input :title %>
+        <%= f.input :image %>
+        <%= f.input :description %>
+
+        <div class="actions">
+          <%= f.button :submit %>
+          <%= link_to 'Cancel', posts_path %>
+        </div>
+      <% end %>
+  </script>
+  
 </div>

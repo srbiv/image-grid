@@ -1,33 +1,53 @@
 body {
-  background-color:white;
+  background-color:#0f0f0f;
 }
 form {
-  @include container();
-  @include blueprint-form(); 
-  @include blueprint-inline-form();
-  
+  padding: 10px;
+  h2 {
+    color:#ccc;
+    text-align:left;
+    margin:10px 0 8px 0;
+  }
   label {
-    @include inline-block();
+    display: block;
     width:6em;
+    color:#ccc;
+    text-align:left;
+  }
+  .input {
+    margin:6px 0;
+  }
+  .input input{
+    width:200px;
+    display:block;
   }
   .actions{
-    @include columns(2);
-    @include pad(1);
+    display:block;
+    text-align:left;
   }
   .error{
     display:block;
+    margin:6px 0;
   }
 }
-.content {
-  @include container;
+#content {
+  position:relative;
+  display:block;
+  height:640px;
+  overflow:hidden;
+  width:1200px;
 }
 
 #posts{
-  @include full;
-  .post {
+  width:1200px;
+  position:absolute;
+  overflow:hidden;
+  text-align:center;
+  margin-top:25px;
+  >.post {
     @include inline-block;
-    margin-bottom:20px;
-    border:1px solid white;
+    margin:0 15px 30px;
+    border:1px solid #666;
     height:250px;
     width:250px;
     position:relative;
@@ -73,7 +93,6 @@ form {
 }
 
 #footer {
-  @include full;
   @include opacity(.7);
   @include border-radius(5px);
   border:1px solid;
@@ -81,13 +100,15 @@ form {
   height: 54px;
   padding-left: 24px;
   position: fixed;
-  width:1016px;
+  width:30px;
   bottom: 20px;
   z-index: 100;
   background-color:#ccc;
-  margin:0 auto;
+  margin:0 0 0 2px;
+  overflow:hidden;
   
   ul {
+    display:none;
     @include horizontal-list();
   }
   li {

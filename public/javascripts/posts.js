@@ -2,13 +2,29 @@ var posts = (function()
 {
   var postTemplate;
   $(function() {
-    var source   = $("#post-template").html();
-    postTemplate = Handlebars.compile(source);
+    var source   = $("#post-template").html()
+    postTemplate = Handlebars.compile(source)
   });
 
   return {
+    edit : function(element) {
+      var parentDiv = $(element).closest('.post')
+      var postIndex = parentDiv.clone()
+      var href      = $(element).find('a').attr('href')
+      var editForm  = postIndex.find('.edit_form').html()
+      
+      parentDiv.html("<p>loading</p>")
+      
+      $.getJSON(href, null, function (json) {
+        editTemplate = Handlebars.compile(editForm)
+        var html = editTemplate(null)
+        parentDiv.html(html)
+      })
+      return false;
+    },
+     
     newRowElement : function() {
-      return $('<div class="row"></div>');
+      return $('<div class="row"></div>')
     },
 
     nextPost : function (className)

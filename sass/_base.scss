@@ -1,6 +1,7 @@
 // Imports -------------------------------------------------------------------
 @import "susy";
 @import "compass/layout/sticky-footer";
+@import "compass/css3/transform";
 @import "blueprint/form";
 
 
@@ -8,7 +9,7 @@
 
 $total-cols: 4;
 $col-width: 250px;
-$gutter-width: 10px;
+$gutter-width: 32px;
 $side-gutter-width: $gutter-width;
 
 $show-grid-backgrounds  : true;

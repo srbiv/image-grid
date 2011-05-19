@@ -1,6 +1,10 @@
 ImageGrid::Application.routes.draw do
 
+  devise_for :admins
+
   resources :posts, :only => [:index, :new, :create, :edit, :update]
+  
+  root :to => "posts#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

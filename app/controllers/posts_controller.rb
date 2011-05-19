@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_admin!, :only => [:new, :edit]
   # GET /posts
   # GET /posts.xml
   def index
@@ -35,6 +36,11 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    
+    respond_to do |format|
+      format.html #edit.html.erb
+      format.json { render :json => @post }
+    end
   end
 
   # POST /posts
