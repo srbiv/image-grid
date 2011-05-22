@@ -1,6 +1,8 @@
 <div class="post <%= cycle 'alpha', nil, nil, 'omega' %>">
+  <div class="overlay">
+  </div>
   <% if admin_signed_in? -%>
-  <div class="edit"><%= link_to 'Edit', edit_post_path(post) %></div>
+    <div class="edit"><%= link_to 'Edit', edit_post_path(post) %></div>
   <% end %>
   <img src="<%= post.image.url(:main) %>">
   <div class="info">
@@ -20,5 +22,4 @@
         </div>
       <% end %>
   </script>
-  
 </div>

@@ -2,6 +2,7 @@ require 'carrierwave/orm/mongoid'
 
 class Post
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   ##################
   ### Attributes ###
@@ -17,10 +18,10 @@ class Post
   ###################
   ### Validations ###
   ###################
-  validates_presence_of :title
+  validates_presence_of :title, :image
 
   ##############
   ### Scopes ###
   ##############
-
+  scope :newest_first, desc("created_at")
 end

@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_admin!, :only => [:new, :edit]
+  before_filter :authenticate_admin!, :only => [:new, :edit, :update, :create]
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all
-
+    @posts = Post.newest_first
+    @post = Post.new
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }

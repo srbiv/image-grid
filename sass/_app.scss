@@ -1,5 +1,14 @@
 body {
-  background-color:#0f0f0f;
+  background-color:#1f1f1f;
+  margin:0;
+}
+.edit {
+  margin:12px 0 0 220px;
+  @include replace-text-with-dimensions('icons/picture_edit.png');
+  @include opacity(.7);
+  &:hover {
+    @include opacity(1);
+  }
 }
 form {
   padding: 10px;
@@ -33,25 +42,34 @@ form {
 #content {
   position:relative;
   display:block;
-  height:640px;
+  height:925px;
   overflow:hidden;
-  width:1200px;
+  width:1180px;
+  margin:0 auto;
 }
 
 #posts{
-  width:1200px;
   position:absolute;
   overflow:hidden;
-  text-align:center;
+  text-align:left;
   margin-top:25px;
   >.post {
     @include inline-block;
-    margin:0 15px 30px;
-    border:1px solid #666;
+    margin:0 10px 20px;
+    border:10px solid #fff;
     height:250px;
     width:250px;
+    @include border-radius(2px);
+    @include box-shadow(black 0 6px 8px 2px);
     position:relative;
-  
+    .overlay {
+      position:absolute;
+      z-index:999;
+      width:100%;
+      height:100%;
+      @include background-image(radial-gradient(#fff, #000 200px));
+      @include opacity(.1);
+    }
     .info {
       display:none;
     }
@@ -67,7 +85,7 @@ form {
       border-color:#333;
       .info {
         @include opacity(.9);
-        color:#ccc;
+        color:#f0f0f0;
         position:absolute;
         height:85px;
         width:250px;
@@ -94,22 +112,19 @@ form {
 
 #footer {
   @include opacity(.7);
-  @include border-radius(5px);
-  border:1px solid;
-  border-color:#BBBBBB #AAAAAA #888888;
-  height: 54px;
-  padding-left: 24px;
+  background: #0f0f0f image-url('bg-footer.png') repeat-x bottom left;
+  height: 70px;
   position: fixed;
-  width:30px;
-  bottom: 20px;
+  width:100%;
+  bottom: 0;
   z-index: 100;
-  background-color:#ccc;
-  margin:0 0 0 2px;
+  margin:0;
   overflow:hidden;
-  
+  padding:0;
+  left:0;
   ul {
     display:none;
-    @include horizontal-list();
+    @include horizontal-list;
   }
   li {
     margin-right:1.3em;

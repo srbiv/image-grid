@@ -1,4 +1,9 @@
 <div id="posts">
+  <% if admin_signed_in? -%>
+  <div class="post">
+    <%= render 'form' %>
+  </div>
+  <% end %>  
   <% @posts.each do |post| %>
     <%# Renders the _post.html.erb partial for each post %>
     <%= render post %>
