@@ -21,6 +21,7 @@ gem 'simple_form'
 # File Uploader/Processor
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
 
 
 #Auth

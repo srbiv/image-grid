@@ -1,44 +1,51 @@
 body {
   background-color:#1f1f1f;
   margin:0;
+  font-family:Georgia;
 }
-.edit {
-  margin:12px 0 0 220px;
-  @include replace-text-with-dimensions('icons/picture_edit.png');
-  @include opacity(.7);
-  &:hover {
-    @include opacity(1);
-  }
+a {
+  @include link-colors(#f0f0f0);
 }
 form {
   padding: 10px;
+  
   h2 {
     color:#ccc;
     text-align:left;
     margin:10px 0 8px 0;
   }
+  
   label {
     display: block;
     width:6em;
     color:#ccc;
     text-align:left;
   }
+  
   .input {
     margin:6px 0;
+    
+    input[type="file"] {
+      color:#fff;
+    }
+    
+    input{
+      width:200px;
+      display:block;
+    }
   }
-  .input input{
-    width:200px;
-    display:block;
-  }
+  
   .actions{
     display:block;
     text-align:left;
   }
+  
   .error{
     display:block;
     margin:6px 0;
   }
 }
+
 #content {
   position:relative;
   display:block;
@@ -53,51 +60,57 @@ form {
   overflow:hidden;
   text-align:left;
   margin-top:25px;
+
   >.post {
     @include inline-block;
+    @include border-radius(2px);
+    @include box-shadow(black 0 6px 12px 2px);
+    
     margin:0 10px 20px;
     border:10px solid #fff;
     height:250px;
     width:250px;
-    @include border-radius(2px);
-    @include box-shadow(black 0 6px 8px 2px);
     position:relative;
+    
     .overlay {
+      @include background-image(radial-gradient(#fff, #000 200px));
+      @include opacity(.1);
+      
       position:absolute;
       z-index:999;
       width:100%;
       height:100%;
-      @include background-image(radial-gradient(#fff, #000 200px));
-      @include opacity(.1);
     }
-    .info {
-      display:none;
-    }
-  
-    .edit {
-      position:absolute;
-      top:0;
-      left:0;
-    }
-  
+    
     &:hover {
-      cursor:pointer;
-      border-color:#333;
+      border-color:#fff;
+      
       .info {
-        @include opacity(.9);
-        color:#f0f0f0;
+        @include opacity(.6);
+        
+        background-color:#000;
         position:absolute;
-        height:85px;
+        display:block;
+        height:250px;
         width:250px;
         bottom:0;
         left:0;
-        background-color:black;
-        display:block;
       
         h2 {
-          font-size:18px;
-          margin:12px 24px 6px 12px;
-
+          color       : white;
+          font-size   : 30px;
+          font-weight : normal;
+          font-family : Courier;
+          text-align  : center;
+          width       : 100%;
+          margin-top  : 105px;
+          
+          sup {
+            vertical-align:40%;
+            font-family:Georgia;
+            font-size:20px;
+            margin-right:2px;
+          }
         }
 
         p{
@@ -106,7 +119,24 @@ form {
         }
       }
     }
-
+    
+    .info {
+      display:none;
+    }
+  
+    .edit {
+      @include replace-text-with-dimensions('icons/picture_edit.png');
+      @include opacity(.7);
+      position:absolute;
+      cursor:pointer;
+      top:12px;
+      left:220px;
+      z-index:9999;
+      
+      &:hover {
+        @include opacity(1);
+      }
+    }
   }
 }
 

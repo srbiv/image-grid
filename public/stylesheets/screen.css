@@ -12,11 +12,159 @@
 body {
   background-color: #1f1f1f;
   margin: 0;
+  font-family: Georgia;
 }
 
-/* line 5, ../../sass/_app.scss */
-.edit {
-  margin: 12px 0 0 220px;
+/* line 6, ../../sass/_app.scss */
+a {
+  color: #f0f0f0;
+}
+
+/* line 9, ../../sass/_app.scss */
+form {
+  padding: 10px;
+}
+/* line 12, ../../sass/_app.scss */
+form h2 {
+  color: #ccc;
+  text-align: left;
+  margin: 10px 0 8px 0;
+}
+/* line 18, ../../sass/_app.scss */
+form label {
+  display: block;
+  width: 6em;
+  color: #ccc;
+  text-align: left;
+}
+/* line 25, ../../sass/_app.scss */
+form .input {
+  margin: 6px 0;
+}
+/* line 28, ../../sass/_app.scss */
+form .input input[type="file"] {
+  color: #fff;
+}
+/* line 32, ../../sass/_app.scss */
+form .input input {
+  width: 200px;
+  display: block;
+}
+/* line 38, ../../sass/_app.scss */
+form .actions {
+  display: block;
+  text-align: left;
+}
+/* line 43, ../../sass/_app.scss */
+form .error {
+  display: block;
+  margin: 6px 0;
+}
+
+/* line 49, ../../sass/_app.scss */
+#content {
+  position: relative;
+  display: block;
+  height: 925px;
+  overflow: hidden;
+  width: 1180px;
+  margin: 0 auto;
+}
+
+/* line 58, ../../sass/_app.scss */
+#posts {
+  position: absolute;
+  overflow: hidden;
+  text-align: left;
+  margin-top: 25px;
+}
+/* line 64, ../../sass/_app.scss */
+#posts > .post {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: black 0 6px 12px 2px;
+  -webkit-box-shadow: black 0 6px 12px 2px;
+  -o-box-shadow: black 0 6px 12px 2px;
+  box-shadow: black 0 6px 12px 2px;
+  margin: 0 10px 20px;
+  border: 10px solid #fff;
+  height: 250px;
+  width: 250px;
+  position: relative;
+}
+/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p180@image-grid/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#posts > .post {
+  *display: inline;
+}
+/* line 75, ../../sass/_app.scss */
+#posts > .post .overlay {
+  background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, color-stop(0%, #ffffff), color-stop(100%, #000000));
+  background-image: -webkit-radial-gradient(#ffffff, #000000 200px);
+  background-image: -moz-radial-gradient(#ffffff, #000000 200px);
+  background-image: -o-radial-gradient(#ffffff, #000000 200px);
+  background-image: radial-gradient(#ffffff, #000000 200px);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+}
+/* line 85, ../../sass/_app.scss */
+#posts > .post:hover {
+  border-color: #fff;
+}
+/* line 88, ../../sass/_app.scss */
+#posts > .post:hover .info {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background-color: #000;
+  position: absolute;
+  display: block;
+  height: 250px;
+  width: 250px;
+  bottom: 0;
+  left: 0;
+}
+/* line 99, ../../sass/_app.scss */
+#posts > .post:hover .info h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: normal;
+  font-family: Courier;
+  text-align: center;
+  width: 100%;
+  margin-top: 105px;
+}
+/* line 108, ../../sass/_app.scss */
+#posts > .post:hover .info h2 sup {
+  vertical-align: 40%;
+  font-family: Georgia;
+  font-size: 20px;
+  margin-right: 2px;
+}
+/* line 116, ../../sass/_app.scss */
+#posts > .post:hover .info p {
+  font-size: 12px;
+  margin: 6px 12px 0 12px;
+}
+/* line 123, ../../sass/_app.scss */
+#posts > .post .info {
+  display: none;
+}
+/* line 127, ../../sass/_app.scss */
+#posts > .post .edit {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
@@ -28,151 +176,20 @@ body {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
+  position: absolute;
+  cursor: pointer;
+  top: 12px;
+  left: 220px;
+  z-index: 9999;
 }
-/* line 9, ../../sass/_app.scss */
-.edit:hover {
+/* line 136, ../../sass/_app.scss */
+#posts > .post .edit:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 13, ../../sass/_app.scss */
-form {
-  padding: 10px;
-}
-/* line 15, ../../sass/_app.scss */
-form h2 {
-  color: #ccc;
-  text-align: left;
-  margin: 10px 0 8px 0;
-}
-/* line 20, ../../sass/_app.scss */
-form label {
-  display: block;
-  width: 6em;
-  color: #ccc;
-  text-align: left;
-}
-/* line 26, ../../sass/_app.scss */
-form .input {
-  margin: 6px 0;
-}
-/* line 29, ../../sass/_app.scss */
-form .input input {
-  width: 200px;
-  display: block;
-}
-/* line 33, ../../sass/_app.scss */
-form .actions {
-  display: block;
-  text-align: left;
-}
-/* line 37, ../../sass/_app.scss */
-form .error {
-  display: block;
-  margin: 6px 0;
-}
-
-/* line 42, ../../sass/_app.scss */
-#content {
-  position: relative;
-  display: block;
-  height: 925px;
-  overflow: hidden;
-  width: 1180px;
-  margin: 0 auto;
-}
-
-/* line 51, ../../sass/_app.scss */
-#posts {
-  position: absolute;
-  overflow: hidden;
-  text-align: left;
-  margin-top: 25px;
-}
-/* line 56, ../../sass/_app.scss */
-#posts > .post {
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  margin: 0 10px 20px;
-  border: 10px solid #fff;
-  height: 250px;
-  width: 250px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -o-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -khtml-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: black 0 6px 8px 2px;
-  -webkit-box-shadow: black 0 6px 8px 2px;
-  -o-box-shadow: black 0 6px 8px 2px;
-  box-shadow: black 0 6px 8px 2px;
-  position: relative;
-}
-/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p180@image-grid/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-#posts > .post {
-  *display: inline;
-}
-/* line 65, ../../sass/_app.scss */
-#posts > .post .overlay {
-  position: absolute;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, color-stop(0%, #ffffff), color-stop(100%, #000000));
-  background-image: -webkit-radial-gradient(#ffffff, #000000 200px);
-  background-image: -moz-radial-gradient(#ffffff, #000000 200px);
-  background-image: -o-radial-gradient(#ffffff, #000000 200px);
-  background-image: radial-gradient(#ffffff, #000000 200px);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
-  opacity: 0.1;
-}
-/* line 73, ../../sass/_app.scss */
-#posts > .post .info {
-  display: none;
-}
-/* line 77, ../../sass/_app.scss */
-#posts > .post .edit {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-/* line 83, ../../sass/_app.scss */
-#posts > .post:hover {
-  cursor: pointer;
-  border-color: #333;
-}
-/* line 86, ../../sass/_app.scss */
-#posts > .post:hover .info {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
-  opacity: 0.9;
-  color: #f0f0f0;
-  position: absolute;
-  height: 85px;
-  width: 250px;
-  bottom: 0;
-  left: 0;
-  background-color: black;
-  display: block;
-}
-/* line 97, ../../sass/_app.scss */
-#posts > .post:hover .info h2 {
-  font-size: 18px;
-  margin: 12px 24px 6px 12px;
-}
-/* line 103, ../../sass/_app.scss */
-#posts > .post:hover .info p {
-  font-size: 12px;
-  margin: 6px 12px 0 12px;
-}
-
-/* line 113, ../../sass/_app.scss */
+/* line 143, ../../sass/_app.scss */
 #footer {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
@@ -188,7 +205,7 @@ form .error {
   padding: 0;
   left: 0;
 }
-/* line 125, ../../sass/_app.scss */
+/* line 155, ../../sass/_app.scss */
 #footer ul {
   display: none;
   margin: 0;
@@ -220,7 +237,7 @@ form .error {
 #footer ul li.last {
   padding-right: 0;
 }
-/* line 129, ../../sass/_app.scss */
+/* line 159, ../../sass/_app.scss */
 #footer li {
   margin-right: 1.3em;
   font-size: 36px;
@@ -228,7 +245,7 @@ form .error {
   line-height: 52px;
   color: #000;
 }
-/* line 136, ../../sass/_app.scss */
+/* line 166, ../../sass/_app.scss */
 #footer a {
   color: #111111;
   text-decoration: none;
