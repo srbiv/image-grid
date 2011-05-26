@@ -1,6 +1,7 @@
 // Imports -------------------------------------------------------------------
 @import "susy";
 @import "compass";
+@import "compass/reset";
 @import "blueprint/form";
 @import "compass/utilities/sprites/base";
 @import "icons/picture_edit.png";
@@ -10,7 +11,7 @@
 // Grid ----------------------------------------------------------------------
 
 $total-cols: 4;
-$col-width: 250px;
-$gutter-width: 32px;
+$col-width: 270px;
+$gutter-width: 20px;
 $side-gutter-width: $gutter-width;
 $show-grid-backgrounds: true;

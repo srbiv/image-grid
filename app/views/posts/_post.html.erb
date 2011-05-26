@@ -1,4 +1,4 @@
-<div class="post <%= cycle 'alpha', nil, nil, 'omega' %>">
+<div class="post">
   <div class="overlay">
   </div>
   <% if admin_signed_in? -%>
@@ -12,8 +12,8 @@
   <script class="edit_form" type="text/x-handlebars-template">
       <%= simple_form_for post, :html => { :multipart => true } do |f| %>
         <h2>Editing <%= post.title %></h2>
-        <%= f.input :title %>
         <%= f.input :image %>
+        <%= f.input :title %>
         <%= f.input :description %>
 
         <div class="actions">

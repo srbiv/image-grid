@@ -6,7 +6,7 @@ gem 'rails', '3.0.7'
 gem 'jquery-rails', '>= 0.2.6'
 
 # ODM
-gem "mongoid", :git => "git@github.com:durran/mongoid.git"
+gem "mongoid"
 gem 'bson_ext'
 
 # Compass
